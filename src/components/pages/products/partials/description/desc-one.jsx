@@ -34,32 +34,27 @@ function DescOne(props) {
             <div className="product-desc-content">
               <h3>Product Information</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna viverra non, semper suscipit, posuere
-                a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam
-                porttitor mauris sit amet orci. Aenean dignissim pellentesque
-                felis. Phasellus ultrices nulla quis nibh. Quisque a lectus.
-                Donec consectetuer ligula vulputate sem tristique cursus.{" "}
-              </p>
-              <ul>
-                <li>
-                  Nunc nec porttitor turpis. In eu risus enim. In vitae mollis
-                  elit.{" "}
-                </li>
-                <li>Vivamus finibus vel mauris ut vehicula.</li>
-                <li>
-                  Nullam a magna porttitor, dictum risus nec, faucibus sapien.
-                </li>
-              </ul>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna viverra non, semper suscipit, posuere
-                a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam
-                porttitor mauris sit amet orci. Aenean dignissim pellentesque
-                felis. Phasellus ultrices nulla quis nibh. Quisque a lectus.
-                Donec consectetuer ligula vulputate sem tristique cursus.{" "}
+                <strong>Go Low on MJ&rsquo;s #1 Sneaker</strong>
+                <br />
+                Based on Michael Jordan&rsquo;s 1985 multicolor signature
+                basketball shoe, the Jordan AJ 1 Low has a clean, classic look
+                for casual wear. Constructed with a combination of leather and
+                synthetic material} +s that offer durability and support, this
+                casual sneaker will provide years of comfortable wear. An
+                Air-Sole unit in the midsole provides superior cushioning while
+                the outsole flex grooves promote full mobility and flexibility.
+                <br />
+                <br />
+                <strong>Jordan AJ 1 Low features:</strong>
+                <br />
+                &bull;Genuine leather or suede upper provides a premium look.
+                <br />
+                &bull;Toe box perforations promote cooling airflow.
+                <br />
+                &bull;Encapsulated Air-Sole&reg; unit provides lightweight
+                cushioning.
+                <br />
+                &bull;Solid-rubber outsole ensures firm traction.
               </p>
             </div>
           </TabPanel>
