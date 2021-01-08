@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import imagesLoaded from "imagesloaded";
 import { Helmet } from "react-helmet";
 
@@ -12,36 +12,20 @@ import Breadcrumb from "../../common/breadcrumb";
 import QuickView from "../../features/product/common/quickview";
 
 import { productGallery } from "../../../utils";
-
-//const productRef = require("../../../database/dbase").docRef;
+// import { db, auth } from "../../../firebase/firestore";
 
 function SingleProduct(props) {
   let productId = props.match.params.id;
 
-  // const admin = require("firebase-admin");
-  // admin.initializeApp({
-  //   credential: admin.credential.applicationDefault(),
-  // });
-  // const db = admin.firestore();
+  // const [productName, setProductName] = useState([]);
 
-  // try {
-  //   let docRef = async () => {
-  //     await db
-  //       .collection("products")
-  //       .get()
-  //       .then((snapshot) => {
-  //         snapshot.forEach((doc) => {
-  //           console.log(doc.id, "=>", doc.data());
-  //         });
-  //       })
-  //       .catch((err) => {
-  //         console.log("Error getting documents", err);
-  //       });
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await db.collection("products").get();
+  //     setProductName(data.docs.map((doc) => doc.data()));
   //   };
-  // } catch (e) {
-  //    export GOOGLE_APPLICATION_CREDENTIALS="D:\webDevelopment\shoes-ecommerce\shoes-backend\shoes-backend-9ab8349ac915.json"
-  //   console.log(e);
-  // }
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     productGallery();
@@ -61,9 +45,7 @@ function SingleProduct(props) {
         <title>KickzOn</title>
       </Helmet>
 
-      <h1 className="d-none">
-        Molla React eCommerce Template - Product Default
-      </h1>
+      <h1 className="d-none">KickzOn - Product Default</h1>
       <div className="main">
         <Breadcrumb
           title="Default"

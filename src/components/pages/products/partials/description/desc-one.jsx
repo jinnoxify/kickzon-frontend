@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import { isIEBrowser } from "../../../../../utils";
+import { db, auth } from "../../../../../firebase/firestore";
 
 function DescOne(props) {
-  const { product } = props;
+  const [productDesc, setProductDesc] = useState("");
+
+  db.collection("products")
+    .get()
+    .then((snapshot) => {
+      const product = [];
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        product.push(data);
+      });
+      setProductDesc((desc) => (desc = product[0].product.description));
+    })
+    .catch((err) => console.log(err));
+
+  function createMarkup() {
+    return { __html: productDesc };
+  }
 
   return (
     <Tabs selectedTabClassName="show" selectedTabPanelClassName="active show">
@@ -31,32 +48,10 @@ function DescOne(props) {
 
         <div className="tab-content">
           <TabPanel className="tab-pane">
-            <div className="product-desc-content">
-              <h3>Product Information</h3>
-              <p>
-                <strong>Go Low on MJ&rsquo;s #1 Sneaker</strong>
-                <br />
-                Based on Michael Jordan&rsquo;s 1985 multicolor signature
-                basketball shoe, the Jordan AJ 1 Low has a clean, classic look
-                for casual wear. Constructed with a combination of leather and
-                synthetic material} +s that offer durability and support, this
-                casual sneaker will provide years of comfortable wear. An
-                Air-Sole unit in the midsole provides superior cushioning while
-                the outsole flex grooves promote full mobility and flexibility.
-                <br />
-                <br />
-                <strong>Jordan AJ 1 Low features:</strong>
-                <br />
-                &bull;Genuine leather or suede upper provides a premium look.
-                <br />
-                &bull;Toe box perforations promote cooling airflow.
-                <br />
-                &bull;Encapsulated Air-Sole&reg; unit provides lightweight
-                cushioning.
-                <br />
-                &bull;Solid-rubber outsole ensures firm traction.
-              </p>
-            </div>
+            <div
+              className="product-desc-content"
+              dangerouslySetInnerHTML={createMarkup()}
+            ></div>
           </TabPanel>
 
           <TabPanel className="tab-pane">
